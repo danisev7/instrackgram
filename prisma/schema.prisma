@@ -14,6 +14,7 @@ datasource db {
 model Iguser {
   id        String   @id @default(cuid())
   username  String   @unique
+  email     String  
   password  String
   proxyUrl  String
   createdAt DateTime @default(now())
