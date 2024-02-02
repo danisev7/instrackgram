@@ -1,36 +1,25 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
 ## Getting Started
 
-First, run the development server:
+- user_info_by_username (1) (PU,PR)
+- user_following (1) (PR)
+- user_followers (1) (PR)
+- user_stories (1) (PR)
+- user_medias (1) (PR)
+- user_medias (user_following) (PU,PR)
+- posts = user_posts + following_posts
+- media_comments (posts) (PR)
+- media_likers (posts) (PR)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+50K Followers/Following max.
+0,36 Post/day/user or 2,5 Post/Week/User // https://later.com/blog/how-often-post-to-instagram/
+20K Posts/day/Following
+Total requests/day/user_watched = 50k (user_medias) + 20k (media_comments) + 20k (media_likers) = 100k
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+5k IP/User/Day API request Instagram Limits https://socialpros.co/instagram-daily-limits/ (200 requests/hour)
+20 Instagram users / user_watched / day
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+// https://privateproxy.me
+100 users_watched -> 2000 Instagram users -> 200 Proxies (10 instagram accounts/IP) -> 650€/mes
+Coste: 6,5$/user_watched/mes - 0,22$/user_watched/day
+Ingresos: 1,2$/user_watched/day
+Margen: 81% (1,2-0,22)/1,2\*100
